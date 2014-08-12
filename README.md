@@ -25,7 +25,7 @@ git clone https://github.com/balancedthought/madden_ocp.git
 
 #### Branch naming conventions
 
-bq. "#{developer_initials}_#{trello_card_number_only_numbers}_#{trello_card_brief_description.gsub(/\s/,'_')}".downcase
+> "#{developer_initials}_#{trello_card_number_only_numbers}_#{trello_card_brief_description.gsub(/\s/,'_')}".downcase
 
 e.g.: 
 developer name: Viorel Leganaru
@@ -38,18 +38,18 @@ Should match: @/^[a-z]{2,3}_\d{1,5}(_[0-9a-z]+)+$/@
 
 ;-)
 
-h3. Steps in Depth        
+### Steps in Depth        
 
-h4. Background Info
+#### Background Info
 
 The Release Branch is *rb_2012_04_03*
 _Your Name is Dinesh Panchal_
 _Your initials are *dp*_
 _Your trello card number is *35*_
 
-h4. Before you begin you must use this command
+#### Before you begin you must use this command
 
-bq. git config branch.autosetuprebase always
+> git config branch.autosetuprebase always
 git config branch.master.rebase true
 
 The code above will make your git pull command default to always add - -rebase
@@ -57,7 +57,7 @@ The code above will make your git pull command default to always add - -rebase
 
 <ol>
 <li> 
-h4. +Pull to update your local Release Branch+
+#### +Pull to update your local Release Branch+
 
 
 @git checkout --track origin/rb_2012_04_03@	
@@ -66,14 +66,14 @@ h4. +Pull to update your local Release Branch+
 <p>this will create a local branch named rb_2012_04_03</p>
 </li>
 <li>
-h4. +Check out a feature branch+
+#### +Check out a feature branch+
 
 @git checkout -b dp_35_country_validations@
 
 <p>_*your initials + trello card number + small description (all lowercase)*_</p>
 </li>
 <li>
-h4. +Do work in your feature branch, committing early and often+
+#### +Do work in your feature branch, committing early and often+
 
 
 @#do your work@
@@ -84,7 +84,7 @@ h4. +Do work in your feature branch, committing early and often+
 @git commit -m "COMPLETED: tests and all"@
 </li>
 <li>
-h4. +Rebase frequently to incorporate upstream changes+
+#### +Rebase frequently to incorporate upstream changes+
 
 
 	@git fetch@
@@ -92,7 +92,7 @@ h4. +Rebase frequently to incorporate upstream changes+
 
 </li>
 <li>
-h4. +Interactive rebase (squash) your commits+
+#### +Interactive rebase (squash) your commits+
 
 	@git rebase -i rb_2012_04_03@
 
@@ -116,7 +116,7 @@ h4. +Interactive rebase (squash) your commits+
 </h5>
 </li>
 <li>
-h4. +Notify QA of your completed feature+
+#### +Notify QA of your completed feature+
 
 h5. You can do this by following the steps below: 
 </li>
@@ -126,32 +126,32 @@ h5. You can do this by following the steps below:
        <li>add a comment to the card's activity stream which will notify the appropriate qa person that was added in step 2</li>
 </ol>
 <li>
-h4. +Once your feature has been approved by QA+		
+#### +Once your feature has been approved by QA+		
 </li>
 <ol>
 <li>
-h4. +Rebase once again from the Release Branch+
+#### +Rebase once again from the Release Branch+
 
 	@git fetch@
 	@git rebase origin/rb_2012_04_03@	
 
 </li>
 <li>
-h4. +Merge your changes into the Release Branch+
+#### +Merge your changes into the Release Branch+
 
 	@git checkout rb_2012_04_03@
 	@git merge dp_35_country_validations@	
 
 </li>
 <li>
-h4. +Push your changes upstream+
+#### +Push your changes upstream+
 
 
 	@git push origin rb_2012_04_03@
 
 </li>
 <li>
-h4. +After your feature has been merged into master, delete your remote branch+
+#### +After your feature has been merged into master, delete your remote branch+
 
 	@git push origin :dp_35_country_validations@
 
@@ -160,23 +160,23 @@ h4. +After your feature has been merged into master, delete your remote branch+
 </ol>
 
 
-h2. Feature Development with multiple developers
+## Feature Development with multiple developers
 
-h4. push your local branch to github
+#### push your local branch to github
 
 @git push origin branch_name@
 @git branch --set-upstream branch_name origin/branch_name@
 
-h5. Then, others can check out your changes with a git fetch and a git checkout.
+##### Then, others can check out your changes with a git fetch and a git checkout.
 
 @git fetch@
 @git checkout --track origin/branch_name@
 
-h5. Use the same exact steps as above treating the shared branch as the release branch. You cannot rebase commits that have been pushed remotely, unless all the people who have downloaded the branch agree to delete the branch and re-download.
+##### Use the same exact steps as above treating the shared branch as the release branch. You cannot rebase commits that have been pushed remotely, unless all the people who have downloaded the branch agree to delete the branch and re-download.
 
-h2. BugFixes for production not associated to a release 
+## BugFixes for production not associated to a release 
 
-h4. The only difference from the steps above is
+#### The only difference from the steps above is
 
 <ul>
 	<li>Use the master branch instead of the release branch</li>
@@ -184,7 +184,7 @@ h4. The only difference from the steps above is
 	<li>do NOT have a partial fix</li>
 </ul>
 
-h2. Further Reading
+## Further Reading
 
 "A Git Workflow for Agile Teams":http://reinh.com/blog/2009/03/02/a-git-workflow-for-agile-teams.html
 "A successful Git branching model":http://nvie.com/posts/a-successful-git-branching-model/
