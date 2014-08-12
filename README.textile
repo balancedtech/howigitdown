@@ -1,9 +1,5 @@
 h2. Feature Development
 
-h3. Installation - Cloning
-
-git clone https://github.com/balancedthought/madden_ocp.git
-
 h3. Basic Steps
 
 <ol>
