@@ -1,10 +1,10 @@
-h2. Feature Development
+## Feature Development
 
-h3. Installation - Cloning
+### Installation - Cloning
 
 git clone https://github.com/balancedthought/madden_ocp.git
 
-h3. Basic Steps
+### Basic Steps
 
 <ol>
 	<li>Git Fetch to update your staging repository</li>
@@ -23,7 +23,7 @@ h3. Basic Steps
 	</ol>
 </ol>
 
-h4. Branch naming conventions
+#### Branch naming conventions
 
 bq. "#{developer_initials}_#{trello_card_number_only_numbers}_#{trello_card_brief_description.gsub(/\s/,'_')}".downcase
 
